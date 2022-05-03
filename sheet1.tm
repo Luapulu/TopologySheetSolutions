@@ -176,5 +176,177 @@
     can see that <math|U<rsub|i>> is in fact open.
   </proof>
 
-  \;
+  <section|Maps Between Topological Spaces>
+
+  <subsection|Bijective Maps>
+
+  In this subsection, let <math|X> and <math|Y> be topological spaces and
+  <math|f:X\<rightarrow\>Y> a bijective map.
+
+  <\proposition>
+    <label|preimage-inverse>The preimage of a set <math|U> under <math|f> is
+    equal to the inverse of <math|f> applied to <math|U>.
+  </proposition>
+
+  <\proof>
+    Let the preimage of <math|U> be the set
+    <math|A=<around*|{|x\<in\>X:f<around*|(|x|)>\<in\>U|}>> and the inverse
+    applied to <math|U> be the set <math|B=<around*|{|f<rsup|-1><around*|(|y|)>:y\<in\>U|}>>.
+    If <math|x\<in\>A> is an element of the preimage,
+    <math|f<around*|(|x|)>\<in\>U> is an element of <math|U>. Since <math|f>
+    is one-to-one, <math|x=f<rsup|-1><around*|(|y|)>> for
+    <math|y=f<around*|(|x|)>\<in\>U> and so <math|x> is also an element of
+    <math|B>. If <math|x> is now taken to be an element of <math|B>, we know
+    that <math|x=f<rsup|-1><around*|(|y|)>> for some <math|y\<in\>U>. Because
+    <math|f> is injective, there is only one such pair
+    <math|<around*|(|x,y|)>> with <math|x=f<rsup|-1><around*|(|y|)>> and
+    because <math|f> is surjective, the unique <math|x> must be in the domain
+    if <math|y> is in the codomain. Therefore <math|x\<in\>X> and
+    <math|f<around*|(|x|)>\<in\>U>, meaning <math|x> is also an element of
+    <math|A> if it is an elemnt of <math|B>.
+  </proof>
+
+  <\proposition>
+    <math|f> is a homeomorphism if and only if <math|f:X\<rightarrow\>Y> is
+    open
+  </proposition>
+
+  <\proof>
+    Notice that <math|f<around*|(|U|)>> is the preimage of <math|U> under the
+    map <math|f<rsup|-1>>, since
+
+    <\equation*>
+      f<around*|(|U|)>=<around*|{|f<around*|(|x|)>:x\<in\>U|}>=<around*|{|<around*|(|f<rsup|-1>|)><rsup|-1><around*|(|x|)>:x\<in\>U|}>=<around*|{|y\<in\>Y:f<rsup|-1><around*|(|y|)>\<in\>U|}>
+    </equation*>
+
+    where the last equality used proposition <reference|preimage-inverse> to
+    equate the inverse applied to a set with the preimage of <math|U> under
+    the map <math|f<rsup|-1>>. Therefore, if <math|f> is open all preimages
+    of open sets under <math|f<rsup|-1>> are open, meaning <math|f<rsup|-1>>
+    is continuous, which implies <math|f> is a homeomorphism. Conversely, if
+    <math|f> is a homeomorphism, preimages of open sets under
+    <math|f<rsup|-1>> are open, which is equivalent to saying <math|f> maps
+    open sets to open sets and so <math|f> is open.
+  </proof>
+
+  <\lemma>
+    <label|compliment-to-compliment><math|f<around*|(|X\<setminus\>U|)>=Y\<setminus\>f<around*|(|U|)>>
+    for any subset <math|U\<subseteq\>X>.
+  </lemma>
+
+  <\proof>
+    Any point <math|y\<in\>f<around*|(|X\<setminus\>U|)>> must be in <math|Y>
+    and cannot be in <math|f<around*|(|U|)>>. If <math|y> were an element of
+    <math|f<around*|(|U|)>>, too, there would be some point in <math|U> and
+    some point in <math|X\<setminus\>U> which both map to <math|y>. However,
+    this contradicts <math|f> being an injective function. Therefore <math|y>
+    is an element of <math|Y\<setminus\>f<around*|(|U|)>>.
+
+    On the other hand, any point <math|y\<in\>Y\<setminus\>f<around*|(|U|)>>
+    must be
+  </proof>
+
+  <\proposition>
+    <math|f> is open if and only if <math|f> is closed
+  </proposition>
+
+  <\proof>
+    Let <math|f> be open (or closed for the converse) and
+    <math|U\<subseteq\>X> be an open (closed) set. Then
+    <math|f<around*|(|U|)>\<subseteq\>Y> is open (closed) and the compliment
+    <math|Y\<setminus\>f<around*|(|U|)>> is closed (open). as shown in lemma
+    <reference|compliment-to-compliment>,
+    <math|f<around*|(|X\<setminus\>U|)>=Y\<setminus\>f<around*|(|U|)>>, so
+    <math|f> also maps the closed (open) set <math|X\<setminus\>U> to the
+    closed (open) set <math|Y\<setminus\>f<around*|(|U|)>>. Because every
+    closed (open) set is the compliment of some open (closed) set, the map
+    <math|f> is closed (open).
+  </proof>
+
+  <subsection|Generic Maps>
+
+  In this subsection, let <math|X> and <math|Y> be topological spaces and
+  <math|f:X\<rightarrow\>Y> a map between them.
+
+  <\proposition>
+    Arbitrary <math|f> are continuous if and only if the topology on <math|X>
+    is discrete or the topology on <math|Y> is coarse.
+  </proposition>
+
+  <\proof>
+    If the topology on <math|X> is discrete any subset of the domain is open,
+    in particular every preimage is open. Therefore, <math|f> is continuous.
+
+    If the topology on <math|Y> is coarse, we need only look at preimages of
+    <math|\<varnothing\>> and <math|Y>, since those are the only open sets.
+    The preimage of <math|\<varnothing\>> is <math|\<varnothing\>>, which is
+    open; the preimage of <math|Y> is <math|X>, which is open, since all
+    elements in <math|X> map into <math|Y>.
+
+    For the converse, suppose all maps <math|f:X\<rightarrow\>Y> are
+    continuous, but the topology on <math|X> is not discrete and the topology
+    on <math|Y> is not coarse. Then, there exists a subset
+    <math|U\<subseteq\>X> which is not open and an open subset
+    <math|V\<subset\>Y> different from <math|\<varnothing\>> and <math|Y>. If
+    we pick <math|f>, such that <math|f<around*|(|U|)>=V>, the preimage of
+    the open set <math|V> would be the set <math|U>, which is not open.
+    Therefore, we have a contradiction since and <math|f> ought to be
+    continuous.
+  </proof>
+
+  <\proposition>
+    Let <math|\<cal-S\>> be a subbasis of the topology on <math|Y>. The, the
+    map <math|f:X\<rightarrow\>Y> is continuous if and only if the preimage
+    <math|f<rsup|-1><around*|(|U|)>> is open in <math|X> for any
+    <math|U\<in\>\<cal-S\>>.
+  </proposition>
+
+  <\proof>
+    If the map <math|f> is continuous, preimages of any open sets in <math|Y>
+    are open. In particular, since elements of the subbasis are themselves
+    open, the preimages <math|f<rsup|-1><around*|(|U|)>> for
+    <math|U\<in\>\<cal-S\>> must be open.
+
+    For the converse, let preimages of sets in the subbasis be open. Since
+    any set <math|U\<subseteq\>Y> may be expressed as a union of finite
+    intersections of sets in <math|\<cal-S\>>, we have
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|f<rsup|-1><around*|(|U|)>>|<cell|=>|<cell|<around*|{|x\<in\>X:f<around*|(|x|)>\<in\>U|}>>>|<row|<cell|>|<cell|=>|<cell|<around*|{|x\<in\>X:f<around*|(|x|)>\<in\><big|cup><around*|{|<big|cap>V<rsub|i>:V<rsub|i>\<in\>\<cal-S\>|}>|}>>>|<row|<cell|>|<cell|=>|<cell|<big|cup><around*|{|x\<in\>X:f<around*|(|x|)>\<in\><big|cap>V<rsub|i>|}>>>|<row|<cell|>|<cell|=>|<cell|<big|cup><around*|{|<big|cap><around*|{|x\<in\>X:f<around*|(|x|)>\<in\>V<rsub|i>|}>|}>>>|<row|<cell|>|<cell|=>|<cell|<big|cup><around*|{|<big|cap>f<rsup|-1><around*|(|V<rsub|i>|)>|}>>>>>
+    </eqnarray*>
+
+    By our assumption, preimages of the subbasis elements <math|V<rsub|i>>
+    are open and because a union of finite intersections of open sets must be
+    open, <math|f<rsup|-1><around*|(|U|)>> is open, which implies <math|f> is
+    continuous.
+  </proof>
 </body>
+
+<initial|<\collection>
+</collection>>
+
+<\references>
+  <\collection>
+    <associate|auto-1|<tuple|1|?>>
+    <associate|auto-2|<tuple|2|?>>
+    <associate|auto-3|<tuple|3|?>>
+    <associate|auto-4|<tuple|3.1|?>>
+    <associate|auto-5|<tuple|3.2|?>>
+    <associate|compliment-to-compliment|<tuple|10|?>>
+    <associate|preimage-inverse|<tuple|8|?>>
+  </collection>
+</references>
+
+<\auxiliary>
+  <\collection>
+    <\associate|toc>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Characterisation
+      of Metric Continuity> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-1><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Neighbourhoods>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-2><vspace|0.5fn>
+    </associate>
+  </collection>
+</auxiliary>
