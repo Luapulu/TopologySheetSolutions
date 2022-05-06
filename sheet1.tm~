@@ -161,15 +161,19 @@
     every element of <math|U>. Therefore <math|U> is a neighbourhood of all
     its points.
 
-    For the reverse, let V be a neighborhood of all its elements. For every
-    <math|x\<in\>V> we have an open set <math|U<rsub|x>> such that
+    For the reverse, let <version-both|<math|U<rsub|i>> |V >be a neighborhood
+    of all its <version-both|points |elements. For every <math|x\<in\>V> we
+    have an open set <math|U<rsub|x>> such that
     <math|x\<in\>U<rsub|x>\<subseteq\>V>. Consider now the set
     <math|W=<below|<big|cup>|x\<in\>V> U<rsub|x>>. <math|W\<subseteq\>V>
     because all the consitutent <math|U<rsub|x>> are subsets of <math|V>. On
     the other hand <math|V\<subseteq\>W>, since every <math|x\<in\>V> is an
-    element of <math|U<rsub|x>\<subseteq\>W>. So, <math|W=V> and since
-    <math|W> is a union of open sets, <math|W> itself is open, which means
-    <math|V> is open.
+    element of <math|U<rsub|x>\<subseteq\>W>. So, <math|W=V> >and
+    <version-both|we realise that |<version-suppressed>>since
+    <math|<version-both|X|W>> <version-both|<version-suppressed>|is a union
+    of open sets, <math|W> itself >is open, <version-both|it |which means
+    <math|V> >is <version-both|a neighbourhood of all its points, we can see
+    that <math|U<rsub|i>> is in fact |<version-suppressed>>open.
   </proof>
 
   <section|Maps Between Topological Spaces>
@@ -316,57 +320,6 @@
     open, <math|f<rsup|-1><around*|(|U|)>> is open, which implies <math|f> is
     continuous.
   </proof>
-
-  \;
-
-  <section|Closure, Interior, Boundary>
-
-  <\proposition>
-    The set <math|A<rsup|0>> is the maximal open set contained in A.
-  </proposition>
-
-  <\proof>
-    Choose a point <math|x\<nin\>A<rsup|0>>. This means A is not a
-    neighborhood of x, so there is no open set <math|U\<subseteq\>A> with
-    <math|x\<in\>U>.
-
-    \<rightarrow\> <math|A\<setminus\>A<rsup|0>> contains no open sets (The
-    union of all open sets in <math|A> is contained in <math|A<rsup|0>>)
-
-    Show that <math|A<rsup|0>> is open:
-
-    Choose a point <math|x\<in\>A<rsup|0>> \<rightarrow\>
-    <math|A\<in\>N<rsub|x>>
-
-    \<rightarrow\> <math|x\<in\>U\<in\>O> and <math|U\<subseteq\>A>
-
-    Each point <math|y> in <math|U> is also part of <math|A<rsup|0>>, since
-    an open set is a neighborhood of all its points.\ 
-
-    \<rightarrow\>Every point\ 
-
-    \;
-
-    \;
-
-    \;
-
-    \;
-
-    \;
-
-    \;
-
-    \;
-
-    \;
-
-    \;
-
-    \;
-
-    \;
-  </proof>
 </body>
 
 <initial|<\collection>
@@ -379,7 +332,6 @@
     <associate|auto-3|<tuple|3|?>>
     <associate|auto-4|<tuple|3.1|?>>
     <associate|auto-5|<tuple|3.2|?>>
-    <associate|auto-6|<tuple|4|?>>
     <associate|compliment-to-compliment|<tuple|10|?>>
     <associate|preimage-inverse|<tuple|8|?>>
   </collection>
