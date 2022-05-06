@@ -316,6 +316,136 @@
     open, <math|f<rsup|-1><around*|(|U|)>> is open, which implies <math|f> is
     continuous.
   </proof>
+
+  \;
+
+  <section|Closure, Interior, Boundary>
+
+  <\proposition>
+    The set <math|A<rsup|0>> is the maximal open set contained in A.
+  </proposition>
+
+  <\proof>
+    Choose a point <math|x\<nin\>A<rsup|0>>. This means A is not a
+    neighborhood of x, so there is no open set <math|U\<subseteq\>A> with
+    <math|x\<in\>U>.
+
+    \<rightarrow\> <math|A\<setminus\>A<rsup|0>> contains no open sets (The
+    union of all open sets in <math|A> is contained in <math|A<rsup|0>>)
+
+    Show that <math|A<rsup|0>> is open:
+
+    Choose a point <math|x\<in\>A<rsup|0>> \<rightarrow\>
+    <math|A\<in\>N<rsub|x>>
+
+    \<rightarrow\> <math|x\<in\>U\<in\>O> and <math|U\<subseteq\>A>
+
+    Each point <math|y> in <math|U> is also contained in <math|A<rsup|0>>,
+    since an open set is a neighborhood of all its points.\ 
+
+    \<rightarrow\>Every point in <math|A> is contained in an open set which
+    is contained in <math|A<rsup|0>>. This makes <math|A<rsup|0>> open, since
+    it can be expressed as the union of all these open sets.
+
+    \;
+  </proof>
+
+  <\proposition>
+    The set <math|<wide|A|\<bar\>>> is the minimal closed set containing A
+  </proposition>
+
+  <\proof>
+    The given statement is equivalent to\ 
+
+    <math|U<rsup|0>=X\<setminus\><wide|A|\<bar\>>> is the maximal open set
+    not containing any elements of <math|A>. We see this by showing that
+    <math|U<rsup|0> > is the interior of <math|U=X\<setminus\>A>, after which
+    it follows directly from prop. 14.\ 
+
+    Choose <math|x\<in\>U<rsup|0>>. Then we want to see that
+    <math|U\<in\>N<rsub|x>>. Since <math|x> is not in
+    <math|<wide|A|\<bar\>>>, we have by negating the definition of
+    <math|<wide|A|\<bar\>>>:
+
+    There exists a <math|V\<in\>N<rsub|x>> such that we have
+    <math|V\<cap\>A=\<varnothing\>>. This means that for this
+    <math|V\<subseteq\>U>. Therefore <math|U> is also a neighborhood of
+    <math|x>.
+  </proof>
+
+  <\proposition>
+    We have \<partial\><math|A=<wide|A|\<bar\>>\<cap\><wide|X\<setminus\>A|\<bar\>>.>
+  </proposition>
+
+  <\proof>
+    \;
+
+    <\itemize-dot>
+      <item><math|\<subseteq\>:>
+
+      Choose <math|x\<in\>\<partial\>A>. Therefore both
+      <math|<around*|(|A,X\<setminus\>A|)>\<nin\>N<rsub|x>>. We want to show
+      that <math|x> is both in the closure of <math|A> and
+      <math|X\<setminus\>A>.\ 
+
+      To be in <math|<wide|A|\<bar\>>>, we need that for any
+      <math|V\<in\>N<rsub|x>>, <math|V\<cap\>A\<neq\>\<varnothing\>>. Since
+      <math|X\<setminus\>A\<nin\>N<rsub|x>>, we see immediately that
+      \ <math|V\<cap\>A\<neq\>\<varnothing\>>, as the inverse would imply
+      <math|V\<subseteq\>X\<setminus\>A>.\ 
+
+      Similarly, because <math|A\<nin\>N<rsub|x>> it follows that
+      <math|V\<cap\>X\<setminus\>A\<neq\>\<varnothing\>>, which means that
+      <math|x\<in\><wide|X\<setminus\>A|\<bar\>>>.
+
+      <item><math|\<supseteq\>:>
+
+      Choose <math|x\<in\>><math|<wide|A|\<bar\>>\<cap\><wide|X\<setminus\>A|\<bar\>>.>
+      We want to show <math|x\<in\>\<partial\>A>, meaning
+      <math|<around*|(|A,X\<setminus\>A|)>\<nin\>N<rsub|x>>.
+
+      Since <math|x\<in\><wide|A|\<bar\>>>, for any <math|V\<in\>N<rsub|x>>,
+      <math|V\<cap\>A\<neq\>\<varnothing\>>. Therefore
+      <math|X\<setminus\>A\<nin\>N<rsub|x>>.\ 
+
+      Since <math|x\<in\><wide|X\<setminus\>A|\<bar\>>>, for any
+      <math|V\<in\>N<rsub|x>>, <math|V\<cap\>X\<setminus\>A\<neq\>\<varnothing\>>.
+      Therefore <math|A\<nin\>N<rsub|x>>.
+    </itemize-dot>
+  </proof>
+
+  <\proposition>
+    We have <math|<wide|A|\<bar\>>=\<partial\>A\<cup\>A<rsup|0>>.
+  </proposition>
+
+  <\proof>
+    <math|>
+
+    <\itemize-dot>
+      <item><math|\<subseteq\>:>
+
+      Choose <math|x\<in\><wide|A|\<bar\>>>. Then for any
+      <math|V\<in\>N<rsub|x>>, <math|V\<cap\>A\<neq\>\<varnothing\>>. If
+      <math|A\<in\>N<rsub|x>>, it follows immediately that <math|x> is in
+      <math|A<rsup|0>>. If <math|A\<nin\>N<rsub|x>>, then from
+      <math|V\<cap\>A\<neq\>\<varnothing\>> it follows that also
+      <math|X\<setminus\>A\<nin\>N<rsub|x>>. Therefore
+      <math|x\<in\>\<partial\>A>.
+
+      <item><math|\<supseteq\>:>
+
+      Choose <math|x\<in\>\<partial\>A>. Because
+      <math|X\<setminus\>A\<nin\>N<rsub|x>>, it follows immediately that for
+      all <math|V\<in\>N<rsub|x>>, <math|V\<cap\>A\<neq\>\<varnothing\>> (as
+      seen before).\ 
+
+      Choose <math|x\<in\>A<rsup|0>>. From <math|A\<in\>N<rsub|x>>, we see
+      immediately that <math|x\<in\>A>, from which it follows that for all
+      <math|V\<in\>N<rsub|x>>, <math|V\<cap\>A\<neq\>\<varnothing\>>.
+    </itemize-dot>
+  </proof>
+
+  \;
 </body>
 
 <initial|<\collection>
@@ -328,6 +458,7 @@
     <associate|auto-3|<tuple|3|?>>
     <associate|auto-4|<tuple|3.1|?>>
     <associate|auto-5|<tuple|3.2|?>>
+    <associate|auto-6|<tuple|4|?>>
     <associate|compliment-to-compliment|<tuple|10|?>>
     <associate|preimage-inverse|<tuple|8|?>>
   </collection>
@@ -355,6 +486,10 @@
       <with|par-left|<quote|1tab>|3.2<space|2spc>Generic Maps
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-5>>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>Closure,
+      Interior, Boundary> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-6><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
