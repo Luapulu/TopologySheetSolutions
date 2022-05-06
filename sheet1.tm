@@ -161,19 +161,15 @@
     every element of <math|U>. Therefore <math|U> is a neighbourhood of all
     its points.
 
-    For the reverse, let <math|U<rsub|i>> be some neighbourhood of all its
-    elements. The intersection <math|U<rsub|i>\<cap\>U<rsub|j>> is a
-    neighbourhood since <math|U<rsub|i>> and <math|U<rsub|j>> are both
-    neighborhoods of some point in the intersection (using our previous
-    result). A union <math|V> of <math|U<rsub|i>> is a neighbourhood of all
-    its points, since we can find an open set contained in <math|V> that
-    contains every point. Let <math|x\<in\>V>. <math|x> must also be an
-    element of some <math|U<rsub|i>>. Therefore an open set exists in
-    <math|U<rsub|i>\<subseteq\>V> which contains <math|x> and so <math|V> is
-    a neighbourhood of all its points. If we define a neighborhood, such that
-    <math|\<varnothing\>> is a neighborhood of all its points and we realise
-    that since <math|X> is open, it is a neighbourhood of all its points, we
-    can see that <math|U<rsub|i>> is in fact open.
+    For the reverse, let V be a neighborhood of all its elements. For every
+    <math|x\<in\>V> we have an open set <math|U<rsub|x>> such that
+    <math|x\<in\>U<rsub|x>\<subseteq\>V>. Consider now the set
+    <math|W=<below|<big|cup>|x\<in\>V> U<rsub|x>>. <math|W\<subseteq\>V>
+    because all the consitutent <math|U<rsub|x>> are subsets of <math|V>. On
+    the other hand <math|V\<subseteq\>W>, since every <math|x\<in\>V> is an
+    element of <math|U<rsub|x>\<subseteq\>W>. So, <math|W=V> and since
+    <math|W> is a union of open sets, <math|W> itself is open, which means
+    <math|V> is open.
   </proof>
 
   <section|Maps Between Topological Spaces>
@@ -347,6 +343,18 @@
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Neighbourhoods>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-2><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Maps
+      Between Topological Spaces> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-3><vspace|0.5fn>
+
+      <with|par-left|<quote|1tab>|3.1<space|2spc>Bijective Maps
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-4>>
+
+      <with|par-left|<quote|1tab>|3.2<space|2spc>Generic Maps
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-5>>
     </associate>
   </collection>
 </auxiliary>
